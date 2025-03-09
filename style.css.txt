@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: white;
+    transition: background 0.3s;
+}
+
+/* Hidden Sections */
+.container {
+    margin-top: 50px;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* Buttons */
+.btn {
+    padding: 15px 25px;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
+
+.start-btn {
+    background: #ff6600;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.continue-btn {
+    background: green;
+    color: white;
+}
+
+.support-btn {
+    background: red;
+    color: white;
+}
+
+/* Betting Sites */
+.betting-site {
+    background: lightgray;
+    padding: 15px;
+    margin: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 20px;
+    transition: background 0.3s;
+}
+
+.betting-site:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Signal Button (Rotating Animation) */
+.signal-btn {
+    background: gold;
+    color: black;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Popup Message */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 18px;
+}
