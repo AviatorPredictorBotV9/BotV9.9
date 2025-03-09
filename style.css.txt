@@ -1,0 +1,65 @@
+/* A bot so sleek, a style so fine,  
+   A look so sharp, it’s truly divine! */
+
+body {
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Center the show, keep it tight,  
+   Make sure everything sits just right! */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Buttons glow, they steal the scene,  
+   Red so bold, so crisp, so clean! */
+.start-btn, .continue-btn {
+    padding: 15px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+    background: red;
+    color: white;
+}
+
+.start-btn:hover, .continue-btn:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+/* Dropdowns smooth, dropdowns bright,  
+   Choose your country, pick what's right! */
+select {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Betting list so crisp, so wide,  
+   Click a site and join the ride! */
+.betting-sites {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.site {
+    padding: 10px;
+    background: gray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.site:hover {
+    background: lightgray;
+}
