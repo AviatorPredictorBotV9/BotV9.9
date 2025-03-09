@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zayd Aviator Predictor Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Start Button -->
+    <div id="startSection" class="container show">
+        <button id="startButton" class="start-btn">START</button>
+    </div>
+
+    <!-- Country & Language Selection -->
+    <div id="selectionSection" class="container">
+        <h2>Select Country</h2>
+        <select id="countrySelect"></select>
+
+        <h2>Select Language</h2>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="ar">Arabic</option>
+            <option value="fr">French</option>
+            <option value="pt">Portuguese</option>
+        </select>
+
+        <button id="selectionContinueButton" class="continue-btn">Continue</button>
+    </div>
+
+    <!-- Betting Site Selection -->
+    <div id="bettingSection" class="container">
+        <h2>Select Your Betting Site</h2>
+        <div id="bettingSitesContainer"></div>
+    </div>
+
+    <!-- Betting Site ID Entry -->
+    <div id="bettingIdSection" class="container">
+        <h2>Enter Your Betting Site ID</h2>
+        <input type="text" id="bettingId" placeholder="Enter Betting Site ID">
+        <button id="bettingIdContinueButton" class="continue-btn">Continue</button>
+    </div>
+
+    <!-- Activation Code Entry -->
+    <div id="activationCodeSection" class="container">
+        <h2>Enter Activation Code</h2>
+        <input type="password" id="activationCode" placeholder="Enter activation code">
+        <button id="activationContinueButton" class="continue-btn">Continue</button>
+        <p id="activationError" style="color: red; display: none;">Incorrect Activation Code. Please contact support.</p>
+        <button class="support-btn" onclick="window.location.href='https://t.me/zayd0011'">📞 Contact Support</button>
+    </div>
+
+    <!-- Get Signal Button -->
+    <div id="getSignalSection" class="container">
+        <button id="getSignalButton" class="signal-btn">🚀 GET SIGNAL 🚀</button>
+    </div>
+
+    <!-- Popup Notification -->
+    <div id="popup" class="popup">
+        <p>⏳ Please wait while the bot collects site patterns and algorithms...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
