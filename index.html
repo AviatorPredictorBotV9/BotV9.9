@@ -36,27 +36,23 @@
         <select id="countrySelect" class="dropdown">
             <option value="">Select Country</option>
             <script>
-                const countries = [
-                    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia", "Austria",
-                    "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
-                    "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
-                    "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile",
-                    "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic",
-                    "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
-                    "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia",
-                    "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras",
-                    "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast",
-                    "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon",
-                    "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia",
-                    "Maldives", "Mali", "Malta", "Mauritania", "Mauritius", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro",
-                    "Morocco", "Mozambique", "Myanmar", "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger",
-                    "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palestine", "Panama", "Paraguay", "Peru", "Philippines",
-                    "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
-                    "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "South Korea", "South Sudan",
-                    "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Tanzania", "Thailand", "Togo",
-                    "Tunisia", "Turkey", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
-                    "Uzbekistan", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
-                ];
+                const countries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", 
+                                   "Cameroon", "Central African Republic", "Chad", "Comoros", "Democratic Republic of the Congo", 
+                                   "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", 
+                                   "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", 
+                                   "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", 
+                                   "Mozambique", "Namibia", "Niger", "Nigeria", "Republic of the Congo", "Rwanda", "São Tomé and Príncipe", 
+                                   "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", 
+                                   "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Afghanistan", "Armenia", 
+                                   "Azerbaijan", "Bahrain", "Bangladesh", "Bhutan", "Brunei", "Cambodia", "China", "Cyprus", 
+                                   "Georgia", "India", "Indonesia", "Iran", "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", 
+                                   "Kuwait", "Kyrgyzstan", "Laos", "Lebanon", "Malaysia", "Maldives", "Mongolia", "Myanmar", 
+                                   "Nepal", "North Korea", "Oman", "Pakistan", "Palestine", "Philippines", "Qatar", "Saudi Arabia", 
+                                   "Singapore", "South Korea", "Sri Lanka", "Syria", "Taiwan", "Tajikistan", "Thailand", 
+                                   "Timor-Leste", "Turkey", "Turkmenistan", "United Arab Emirates", "Uzbekistan", "Vietnam", 
+                                   "Yemen", "Argentina", "Bolivia", "Chile", "Colombia", "Costa Rica", "Cuba", "Dominican Republic", 
+                                   "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", 
+                                   "Peru", "Spain", "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
                 document.write(countries.map(c => `<option value="${c}">${c}</option>`).join(''));
             </script>
         </select>
@@ -70,31 +66,43 @@
         <div class="betting-sites">
             <script>
                 const bettingSites = [
-                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets",
-                    "22Bet", "Parimatch", "Bet365", "Stake.com", "Unibet", "888casino", "LeoVegas", "Betfair", 
-                    "Betobet", "Betano", "Pinnacle", "RedBet", "Betfred", "M88", "Royal Panda", "Casumo",
-                    "10Cric", "888Bets", "Premier Bet", "Elephant Bet", "MozzartBet", "BetLion", "Access Bet",
-                    "Glory Casino", "NetBet", "SportyBet", "LV Bet", "William Hill", "MarathonBet", "GG.Bet",
-                    "Shangri La Live", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)"
+                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets", 
+                    "Jeetwin", "22Bet", "Parimatch", "Bet365", "Betfair", "LeoVegas", "Stake.com", "Wazobet", "Betobet", 
+                    "Vbet", "Betano", "888casino", "Unibet", "Goldenbet", "Betmaster", "MCW.io", "Betvictor", "Pinnacle", 
+                    "Betonline", "BetUS", "RedBet", "Betfred", "SBOBET", "M88", "MansionBet", "Royal Panda", "Casumo", 
+                    "BetStars", "ComeOn", "5Gringos", "10Cric", "PrideBet Mozambique", "888Bets", "888Starz", "Premier Bet", 
+                    "Elephant Bet", "Betika", "Olabet", "Betwinner", "BetLion", "MozzartBet", "Access Bet", "Glory Casino", 
+                    "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric", "Bongobongo", "Shabiki", "Kwikbet", "Starbet", 
+                    "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino", "FortuneJack", "Rolletto", 
+                    "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet", "GG.Bet", "Shangri La Live", 
+                    "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)"
                 ];
                 document.write(bettingSites.map(site => 
-                    `<div class="site" onclick="bettingSiteSelected('${site}', event)">➡️ ${site}</div>`
+                    `<div class="site" onclick="bettingSiteSelected('${site}')">➡️ ${site}</div>`
                 ).join(''));
             </script>
         </div>
     </div>
 
-    <script>
-        function goToBettingSiteSelection() {
-            document.getElementById('selectionSection').style.display = 'none';
-            document.getElementById('bettingSiteSelection').style.display = 'block';
-        }
+    <!-- Betting Site ID Input Section -->
+    <div id="bettingSiteIDSection" class="container" style="display: none;">
+        <h2>Enter Your Betting Site ID for <span id="selectedSiteName"></span></h2>
+        <input type="text" id="bettingSiteIDInput" class="input" placeholder="Enter your Betting Site ID">
+        <button class="btn" onclick="submitBettingSiteID()">Continue</button>
+    </div>
 
-        function bettingSiteSelected(site) {
-            document.getElementById('bettingSiteSelection').style.display = 'none';
-            alert(`Selected Site: ${site}`);
-        }
-    </script>
+    <!-- Activation Code Section -->
+    <div id="activationCodeSection" class="container" style="display: none;">
+        <h2>Enter Activation Code</h2>
+        <input type="text" id="activationCodeInput" class="input" placeholder="Enter Activation Code">
+        <button class="btn" onclick="validateActivationCode()">Continue</button>
+        <button class="btn support-btn" onclick="contactSupport()">Support</button>
+    </div>
+
+    <!-- Live Signal Section -->
+    <div id="getSignalSection" class="container" style="display: none;">
+        <button class="btn signal-btn" onclick="getLiveSignal()">Get Signal</button>
+    </div>
 
 </body>
 </html>
