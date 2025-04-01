@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zayd Aviator Predictor Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="spider-background">
+
+    <!-- Welcome Screen -->
+    <div id="startSection" class="container">
+        <button id="startButton" class="btn start-btn">START</button>
+    </div>
+
+    <!-- Welcome and Warning -->
+    <div id="welcomeSection" class="container" style="display: none;">
+        <h1>Welcome to <span class="highlight">Zayd Aviator Predictor Bot</span></h1>
+        <p class="warning-text">⚠️ WARNING: Software maximum usage is 12 hours per day ⚠️</p>
+        <button id="continueButton" class="btn">Continue</button>
+    </div>
+
+    <!-- Language and Country Selection -->
+    <div id="selectionSection" class="container" style="display: none;">
+        <h2>Select Language and Country</h2>
+        <p class="subtitle">Software by Zayd | 2025 | BotV9.8</p>
+
+        <select id="languageSelect" class="dropdown">
+            <option value="en">English</option>
+            <option value="ar">Arabic</option>
+            <option value="fr">French</option>
+            <option value="pt">Portuguese</option>
+        </select>
+
+        <select id="countrySelect" class="dropdown">
+            <option value="">Select Country</option>
+            <script>
+                const countries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", 
+                                   "Cameroon", "Central African Republic", "Chad", "Comoros", "Democratic Republic of the Congo", 
+                                   "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", 
+                                   "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", 
+                                   "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", 
+                                   "Mozambique", "Namibia", "Niger", "Nigeria", "Republic of the Congo", "Rwanda", "São Tomé and Príncipe", 
+                                   "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", 
+                                   "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Afghanistan", "Armenia", 
+                                   "Azerbaijan", "Bahrain", "Bangladesh", "Bhutan", "Brunei", "Cambodia", "China", "Cyprus", 
+                                   "Georgia", "India", "Indonesia", "Iran", "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", 
+                                   "Kuwait", "Kyrgyzstan", "Laos", "Lebanon", "Malaysia", "Maldives", "Mongolia", "Myanmar", 
+                                   "Nepal", "North Korea", "Oman", "Pakistan", "Palestine", "Philippines", "Qatar", "Saudi Arabia", 
+                                   "Singapore", "South Korea", "Sri Lanka", "Syria", "Taiwan", "Tajikistan", "Thailand", 
+                                   "Timor-Leste", "Turkey", "Turkmenistan", "United Arab Emirates", "Uzbekistan", "Vietnam", 
+                                   "Yemen", "Argentina", "Bolivia", "Chile", "Colombia", "Costa Rica", "Cuba", "Dominican Republic", 
+                                   "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", 
+                                   "Peru", "Spain", "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
+                document.write(countries.map(c => `<option value="${c}">${c}</option>`).join(''));
+            </script>
+        </select>
+
+        <button class="btn" onclick="goToBettingSiteSelection()">Continue</button>
+    </div>
+
+    <!-- Betting Site Selection -->
+    <div id="bettingSiteSelection" class="container" style="display: none;">
+        <h2>Select Your Betting Site</h2>
+        <div class="betting-sites">
+            <script>
+                const bettingSites = [
+                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets", 
+                    "Jeetwin", "22Bet", "Parimatch", "Bet365", "Betfair", "LeoVegas", "Stake.com", "Wazobet", "Betobet", 
+                    "Vbet", "Betano", "888casino", "Unibet", "Goldenbet", "Betmaster", "MCW.io", "Betvictor", "Pinnacle", 
+                    "Betonline", "BetUS", "RedBet", "Betfred", "SBOBET", "M88", "MansionBet", "Royal Panda", "Casumo", 
+                    "BetStars", "ComeOn", "5Gringos", "10Cric", "PrideBet Mozambique", "888Bets", "888Starz", "Premier Bet", 
+                    "Elephant Bet", "Betika", "Olabet", "Betwinner", "BetLion", "MozzartBet", "Access Bet", "Glory Casino", 
+                    "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric", "Bongobongo", "Shabiki", "Kwikbet", "Starbet", 
+                    "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino", "FortuneJack", "Rolletto", 
+                    "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet", "GG.Bet", "Shangri La Live", 
+                    "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)"
+                ];
+                document.write(bettingSites.map(site => 
+                    `<div class="site" onclick="bettingSiteSelected('${site}')">➡️ ${site}</div>`
+                ).join(''));
+            </script>
+        </div>
+    </div>
+
+    <!-- Betting Site ID Input Section -->
+    <div id="bettingSiteIDSection" class="container" style="display: none;">
+        <h2>Enter Your Betting Site ID for <span id="selectedSiteName"></span></h2>
+        <input type="text" id="bettingSiteIDInput" class="input" placeholder="Enter your Betting Site ID">
+        <button class="btn" onclick="submitBettingSiteID()">Continue</button>
+    </div>
+
+    <!-- Activation Code Section -->
+    <div id="activationCodeSection" class="container" style="display: none;">
+        <h2>Enter Activation Code</h2>
+        <input type="text" id="activationCodeInput" class="input" placeholder="Enter Activation Code">
+        <button class="btn" onclick="validateActivationCode()">Continue</button>
+        <button class="btn support-btn" onclick="contactSupport()">Support</button>
+    </div>
+
+    <!-- Live Signal Section -->
+    <div id="getSignalSection" class="container" style="display: none;">
+        <button class="btn signal-btn" onclick="getLiveSignal()">Get Signal</button>
+    </div>
+
+</body>
+</html>
