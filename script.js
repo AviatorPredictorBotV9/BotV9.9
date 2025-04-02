@@ -1,71 +1,68 @@
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("startButton").addEventListener("click", () => {
-        document.getElementById("startSection").style.display = "none";
-        document.getElementById("selectionSection").style.display = "block";
-    });
-});
+// Function to start the application and show language/country selection
+function startApp() {
+    document.getElementById('startSection').style.display = 'none';
+    document.getElementById('selectionSection').style.display = 'block';
+}
 
-// Move to betting site selection
+// Function to update language selection
+function updateLanguage() {
+    const language = document.getElementById('languageSelect').value;
+    // Here you can implement your logic to change language dynamically based on the selection
+    console.log("Language selected:", language);
+}
+
+// Function to navigate to the betting site selection section
 function goToBettingSiteSelection() {
-    document.getElementById("selectionSection").style.display = "none";
-    document.getElementById("bettingSiteSelection").style.display = "block";
+    const country = document.getElementById('countrySelect').value;
+    if (country) {
+        document.getElementById('selectionSection').style.display = 'none';
+        document.getElementById('bettingSiteSelection').style.display = 'block';
+    } else {
+        alert('Please select a country');
+    }
 }
 
-// When a betting site is selected
-function bettingSiteSelected(siteName) {
-    document.getElementById("bettingSiteSelection").style.display = "none";
-    document.getElementById("bettingSiteIDSection").style.display = "block";
-    document.getElementById("selectedSiteName").innerText = siteName;
+// Function to select a betting site
+function selectBettingSite(siteName) {
+    document.getElementById('selectedSiteName').textContent = siteName;
+    document.getElementById('bettingSiteSelection').style.display = 'none';
+    document.getElementById('bettingSiteIDSection').style.display = 'block';
 }
 
-// Submitting betting site ID moves to activation
+// Function to submit the betting site ID
 function submitBettingSiteID() {
-    const bettingSiteID = document.getElementById("bettingSiteIDInput").value.trim();
+    const bettingSiteID = document.getElementById('bettingSiteIDInput').value;
     if (bettingSiteID) {
-        document.getElementById("bettingSiteIDSection").style.display = "none";
-        document.getElementById("activationCodeSection").style.display = "block";
+        document.getElementById('bettingSiteIDSection').style.display = 'none';
+        document.getElementById('activationCodeSection').style.display = 'block';
     } else {
-        alert("Please enter your Betting Site ID");
+        alert('Please enter your Betting Site ID');
     }
 }
 
-// Activation Code Validation
+// Function to validate the activation code
 function validateActivationCode() {
-    const inputCode = document.getElementById("activationCodeInput").value.trim();
-    const correctCode = "GRN250";
-
-    if (inputCode === correctCode) {
-        document.getElementById("getSignalButton").style.display = "block";
+    const activationCode = document.getElementById('activationCodeInput').value;
+    if (activationCode === 'GRN250') {
+        document.getElementById('activationCodeSection').style.display = 'none';
+        document.getElementById('getSignalButton').style.display = 'block';
     } else {
-        alert("Invalid Activation Code. Please try again.");
+        alert('Invalid Activation Code');
     }
 }
 
-// Contact Support
+// Function to show support contact info
 function contactSupport() {
-    window.open("https://t.me/zayd0011", "_blank");
+    window.open('https://t.me/zayd0011', '_blank');
 }
 
-// Get Live Signal with Animation
+// Function to show the signal button
 function getLiveSignal() {
-    const newWindow = window.open("", "_blank", "width=500,height=500");
-    newWindow.document.write(`
-        <style>
-            body { text-align: center; font-family: Arial, sans-serif; padding: 20px; background: #333; color: white; }
-            .aviator-animation { width: 100px; height: 100px; margin: 20px auto; animation: fly 2s infinite alternate; }
-            @keyframes fly { 0% { transform: translateY(0); } 100% { transform: translateY(-20px); } }
-            .error { color: red; font-weight: bold; font-size: 18px; margin-top: 20px; }
-            .warning { color: orange; font-size: 16px; }
-        </style>
-    `);
-
-    newWindow.document.write(`<img class="aviator-animation" src="https://via.placeholder.com/100" alt="Aviator Jet">`);
-    newWindow.document.write(`<p>Please wait as your bot analyzes the betting site patterns...</p>`);
+    document.getElementById('getSignalButton').disabled = true;
+    document.getElementById('getSignalButton').textContent = 'Loading Signal...';
 
     setTimeout(() => {
-        newWindow.document.write(`<p class="error">⚠️ Server error 675, transaction ID mismatch with device IP address configuration.</p>`);
-        newWindow.document.write(`<p class="warning">⚠️ Use your local device for all transactions.</p>`);
-        newWindow.document.write(`<p class="warning">⚠️ VPN/Proxy detected.</p>`);
-        newWindow.document.write(`<p class="warning">⚠️ Upgrade your package/contact admin.</p>`);
+        document.getElementById('getSignalButton').textContent = 'GET SIGNAL';
+        alert('Signal Loaded');
     }, 3000);
 }
