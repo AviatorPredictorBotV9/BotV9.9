@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,15 +13,15 @@
 
     <!-- Welcome Screen -->
     <div id="startSection" class="container">
-        <button id="startButton" class="btn start-btn">START</button>
+        <button id="startButton" class="btn start-btn" onclick="startApp()">START</button>
     </div>
 
     <!-- Language and Country Selection -->
     <div id="selectionSection" class="container" style="display: none;">
-        <h2>Select Language and Country</h2>
+        <h2 id="selectLanguageText">Select Language and Country</h2>
         <p class="subtitle">Software by Zayd | 2025 | BotV9.8</p>
 
-        <select id="languageSelect" class="dropdown">
+        <select id="languageSelect" class="dropdown" onchange="updateLanguage()">
             <option value="en">English</option>
             <option value="ar">Arabic</option>
             <option value="fr">French</option>
@@ -31,21 +31,89 @@
         <select id="countrySelect" class="dropdown">
             <option value="">Select Country</option>
             <option value="India">India</option>
-            <script>
-                const countries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", 
-                    "Cameroon", "Central African Republic", "Chad", "Comoros", "Democratic Republic of the Congo", 
-                    "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", 
-                    "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", 
-                    "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", 
-                    "Mozambique", "Namibia", "Niger", "Nigeria", "Republic of the Congo", "Rwanda", "São Tomé and Príncipe", 
-                    "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", 
-                    "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Argentina", "Bolivia", 
-                    "Chile", "Colombia", "Costa Rica", "Cuba", "Dominican Republic", "Ecuador", "El Salvador", 
-                    "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Spain", 
-                    "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
-
-                document.write(countries.map(c => `<option value="${c}">${c}</option>`).join(''));
-            </script>
+            <option value="USA">USA</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Argentina">Argentina</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Canada">Canada</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Angola">Angola</option>
+            <option value="Benin">Benin</option>
+            <option value="Botswana">Botswana</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Burundi">Burundi</option>
+            <option value="Cape Verde">Cape Verde</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Central African Republic">Central African Republic</option>
+            <option value="Chad">Chad</option>
+            <option value="Comoros">Comoros</option>
+            <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+            <option value="Djibouti">Djibouti</option>
+            <option value="Egypt">Egypt</option>
+            <option value="Equatorial Guinea">Equatorial Guinea</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Eswatini">Eswatini</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Gabon">Gabon</option>
+            <option value="Gambia">Gambia</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Guinea-Bissau">Guinea-Bissau</option>
+            <option value="Ivory Coast">Ivory Coast</option>
+            <option value="Lesotho">Lesotho</option>
+            <option value="Liberia">Liberia</option>
+            <option value="Libya">Libya</option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Malawi">Malawi</option>
+            <option value="Mali">Mali</option>
+            <option value="Mauritania">Mauritania</option>
+            <option value="Mauritius">Mauritius</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Namibia">Namibia</option>
+            <option value="Niger">Niger</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="São Tomé and Príncipe">São Tomé and Príncipe</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Seychelles">Seychelles</option>
+            <option value="Sierra Leone">Sierra Leone</option>
+            <option value="Somalia">Somalia</option>
+            <option value="Sudan">Sudan</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Togo">Togo</option>
+            <option value="Tunisia">Tunisia</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Chile">Chile</option>
+            <option value="Peru">Peru</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Spain">Spain</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Italy">Italy</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Norway">Norway</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Finland">Finland</option>
+            <option value="Russia">Russia</option>
+            <option value="Japan">Japan</option>
+            <option value="South Korea">South Korea</option>
+            <option value="China">China</option>
+            <option value="Australia">Australia</option>
+            <option value="New Zealand">New Zealand</option>
         </select>
 
         <button class="btn" onclick="goToBettingSiteSelection()">Continue</button>
@@ -53,39 +121,66 @@
 
     <!-- Betting Site Selection Section -->
     <div id="bettingSiteSelection" class="container" style="display: none;">
-        <h2>Select Your Betting Site</h2>
-        <div class="betting-sites">
-            <script>
-                const bettingSites = [
-                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets", 
-                    "Jeetwin", "22Bet", "Parimatch", "Bet365", "Betfair", "LeoVegas", "Stake.com", "Wazobet", "Betobet", 
-                    "Vbet", "Betano", "888casino", "Unibet", "Goldenbet", "Betmaster", "MCW.io", "Betvictor", "Pinnacle", 
-                    "Betonline", "BetUS", "RedBet", "Betfred", "SBOBET", "M88", "MansionBet", "Royal Panda", "Casumo", 
-                    "BetStars", "ComeOn", "5Gringos", "10Cric", "PrideBet Mozambique", "888Bets", "888Starz", "Premier Bet", 
-                    "Elephant Bet", "Betika", "Olabet", "Betwinner", "BetLion", "MozzartBet", "Access Bet", "Glory Casino", 
-                    "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric", "Bongobongo", "Shabiki", "Kwikbet", "Starbet", 
-                    "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino", "FortuneJack", "Rolletto", 
-                    "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet", "GG.Bet", "Shangri La Live", 
-                    "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)", "WSL Bet"
-                ];
-
-                document.write(bettingSites.map(site => 
-                    `<div class="site" onclick="bettingSiteSelected('${site}')">➡️ ${site}</div>`
-                ).join(''));
-            </script>
+        <h2 id="selectBettingSiteText">Select Your Betting Site</h2>
+        <div id="bettingSitesContainer" class="betting-sites">
+            <a href="#" class="betting-site" onclick="selectBettingSite('Pin Up Casino')">Pin Up Casino</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('1Win')">1Win</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Melbet')">Melbet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Crickex')">Crickex</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('1xbet')">1xbet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Dafabet')">Dafabet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betway')">Betway</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('4rabet')">4rabet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Hollywoodbets')">Hollywoodbets</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Jeetwin')">Jeetwin</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('22Bet')">22Bet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Parimatch')">Parimatch</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Bet365')">Bet365</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betfair')">Betfair</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('LeoVegas')">LeoVegas</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Stake.com')">Stake.com</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Wazobet')">Wazobet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betobet')">Betobet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Vbet')">Vbet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betano')">Betano</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('888casino')">888casino</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Unibet')">Unibet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Goldenbet')">Goldenbet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betmaster')">Betmaster</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('MCW.io')">MCW.io</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betvictor')">Betvictor</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Pinnacle')">Pinnacle</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betonline')">Betonline</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('BetUS')">BetUS</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('RedBet')">RedBet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Betfred')">Betfred</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('SBOBET')">SBOBET</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('M88')">M88</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('MansionBet')">MansionBet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Royal Panda')">Royal Panda</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Casumo')">Casumo</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('BetStars')">BetStars</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('ComeOn')">ComeOn</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('5Gringos')">5Gringos</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('10Cric')">10Cric</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('PrideBet Mozambique')">PrideBet Mozambique</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('888Bets')">888Bets</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('888Starz')">888Starz</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Premier Bet')">Premier Bet</a>
+            <a href="#" class="betting-site" onclick="selectBettingSite('Elephant Bet')">Elephant Bet</a>
         </div>
     </div>
 
-    <!-- Betting Site ID Entry -->
+    <!-- Betting Site ID Input -->
     <div id="bettingSiteIDSection" class="container" style="display: none;">
-        <h3>Enter your Betting Site ID for <span id="selectedSiteName"></span>:</h3>
+        <h3 id="enterBettingIDText">Enter your Betting Site ID for <span id="selectedSiteName"></span>:</h3>
         <input type="text" id="bettingSiteIDInput" class="input" placeholder="Enter your Betting Site ID">
         <button class="btn" onclick="submitBettingSiteID()">Continue</button>
     </div>
 
     <!-- Activation Code Section -->
     <div id="activationCodeSection" class="container" style="display: none;">
-        <h2>Enter Activation Code</h2>
+        <h2 id="enterActivationText">Enter Activation Code</h2>
         <input type="text" id="activationCodeInput" class="input" placeholder="Enter Activation Code">
         <button class="btn" onclick="validateActivationCode()">Continue</button>
         <button class="btn support-btn" onclick="contactSupport()">Support</button>
