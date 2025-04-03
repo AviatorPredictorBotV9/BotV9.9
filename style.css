@@ -1,149 +1,104 @@
-/* Global Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-}
-
-.subtitle {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-h2, h3 {
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 12px 25px;
-    background-color: #007BFF;
+    background: linear-gradient(120deg, #1a1a2e, #16213e, #0f3460);
     color: white;
+    padding: 50px;
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    width: 80%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+/* Header Text */
+h2 {
+    color: #f4f4f4;
+    font-size: 22px;
+}
+
+/* Input Fields */
+.input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    background: #007BFF;
+    color: white;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-    margin-top: 20px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-input {
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 80%;
     margin-top: 10px;
+    width: 90%;
+    transition: 0.3s;
 }
 
-input:focus {
-    outline: none;
-    border-color: #007BFF;
+.btn:hover {
+    background: #0056b3;
 }
 
-select {
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 80%;
-    margin-top: 10px;
-}
-
-select:focus {
-    outline: none;
-    border-color: #007BFF;
-}
-
-.dropdown {
-    width: 80%;
-}
-
-.support-btn {
-    background-color: #28a745;
-}
-
-.support-btn:hover {
-    background-color: #218838;
-}
-
+/* Signal Button */
 .signal-btn {
-    background-color: #ff9900;
-}
-
-.signal-btn:hover {
-    background-color: #e68900;
-}
-
-.signal-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.bet-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f0ad4e;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
     color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    display: none;
     font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
-.bet-btn:hover {
-    background-color: #ec971f;
+/* Support Button */
+.support-btn {
+    background: #FF5733;
 }
 
+/* Betting Sites */
 .betting-sites {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.betting-site {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.betting-site:hover {
-    background-color: #0056b3;
-}
-
-.spider-background {
-    background-image: url('spider_background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.signal-button {
-    font-size: 16px;
-    padding: 15px 30px;
-    background-color: #00aaff;
-    color: #fff;
-    border: none;
+.site {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.site:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Dropdowns */
+.dropdown {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
 }
