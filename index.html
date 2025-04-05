@@ -30,20 +30,26 @@
 
         <select id="countrySelect" class="dropdown">
             <option value="">Select Country</option>
-            <option value="India">India</option>
             <script>
-                const countries = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cape Verde", 
-                    "Cameroon", "Central African Republic", "Chad", "Comoros", "Democratic Republic of the Congo", 
-                    "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", 
-                    "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", 
-                    "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", 
-                    "Mozambique", "Namibia", "Niger", "Nigeria", "Republic of the Congo", "Rwanda", "São Tomé and Príncipe", 
-                    "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", 
-                    "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe", "Argentina", "Bolivia", 
-                    "Chile", "Colombia", "Costa Rica", "Cuba", "Dominican Republic", "Ecuador", "El Salvador", 
-                    "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Spain", 
-                    "Uruguay", "Venezuela", "Canada", "USA", "Australia", "UK", "Brazil", "Portugal"];
-
+                const countries = [
+                    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia",
+                    "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Benin",
+                    "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi",
+                    "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Chile", "China", "Colombia", "Congo (Democratic Republic)",
+                    "Congo (Republic)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti",
+                    "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Eswatini", "Ethiopia", "Finland",
+                    "France", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Guatemala", "Guinea", "Honduras", "Hungary",
+                    "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan",
+                    "Kazakhstan", "Kenya", "Korea (North)", "Korea (South)", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon",
+                    "Liberia", "Libya", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
+                    "Malta", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
+                    "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman",
+                    "Pakistan", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania",
+                    "Russia", "Saudi Arabia", "Senegal", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa",
+                    "South Sudan", "Spain", "Sri Lanka", "Sudan", "Sweden", "Switzerland", "Syria", "Taiwan", "Tanzania",
+                    "Thailand", "Tunisia", "Turkey", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
+                    "United States", "Uruguay", "Uzbekistan", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+                ];
                 document.write(countries.map(c => `<option value="${c}">${c}</option>`).join(''));
             </script>
         </select>
@@ -51,75 +57,88 @@
         <button class="btn" onclick="goToBettingSiteSelection()">Continue</button>
     </div>
 
-    <!-- Betting Site Selection Section -->
+    <!-- Betting Site Selection -->
     <div id="bettingSiteSelection" class="container" style="display: none;">
         <h2>Select Your Betting Site</h2>
         <div class="betting-sites">
             <script>
                 const bettingSites = [
-                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets", 
-                    "Jeetwin", "22Bet", "Parimatch", "Bet365", "Betfair", "LeoVegas", "Stake.com", "Wazobet", "Betobet", 
-                    "Vbet", "Betano", "888casino", "Unibet", "Goldenbet", "Betmaster", "MCW.io", "Betvictor", "Pinnacle", 
-                    "Betonline", "BetUS", "RedBet", "Betfred", "SBOBET", "M88", "MansionBet", "Royal Panda", "Casumo", 
-                    "BetStars", "ComeOn", "5Gringos", "10Cric", "PrideBet Mozambique", "888Bets", "888Starz", "Premier Bet", 
-                    "Elephant Bet", "Betika", "Olabet", "Betwinner", "BetLion", "MozzartBet", "Access Bet", "Glory Casino", 
-                    "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric", "Bongobongo", "Shabiki", "Kwikbet", "Starbet", 
-                    "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino", "FortuneJack", "Rolletto", 
-                    "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet", "GG.Bet", "Shangri La Live", 
-                    "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)", "WSL Bet"
+                    "Pin Up Casino", "1Win", "Melbet", "Crickex", "1xbet", "Dafabet", "Betway", "4rabet", "Hollywoodbets",
+                    "Jeetwin", "22Bet", "Parimatch", "Bet365", "Betfair", "LeoVegas", "Stake.com", "Wazobet", "Betobet", "Vbet",
+                    "Betano", "888casino", "Unibet", "Goldenbet", "Betmaster", "MCW.io", "Betvictor", "Pinnacle", "Betonline",
+                    "BetUS", "RedBet", "Betfred", "SBOBET", "M88", "MansionBet", "Royal Panda", "Casumo", "BetStars", "ComeOn",
+                    "5Gringos", "10Cric", "888Bets", "888Starz", "Premier Bet", "Elephant Bet", "Betika", "Olabet", "Betwinner",
+                    "BetLion", "MozzartBet", "Access Bet", "Glory Casino", "NetBet", "Barz Casino", "VoodooDreams Casino", "Betafric",
+                    "Bongobongo", "Kwikbet", "Starbet", "SportyBet", "LV Bet", "Rabona", "N1Bet", "20Bet", "Cloudbet", "Bitcasino",
+                    "FortuneJack", "Rolletto", "Thunderpick", "Megapari", "FezBet", "CampoBet", "William Hill", "MarathonBet",
+                    "GG.Bet", "Mystake", "Powbet", "Zodiac Casino", "Spin Casino", "SpinCity", "Moors World of Sport (MWOS)"
                 ];
-
-                document.write(bettingSites.map(site => 
+                document.write(bettingSites.map(site =>
                     `<div class="site" onclick="bettingSiteSelected('${site}')">➡️ ${site}</div>`
                 ).join(''));
             </script>
         </div>
     </div>
 
-    <!-- Betting Site ID Entry -->
-    <div id="bettingSiteIDSection" class="container" style="display: none;">
-        <h3>Enter your Betting Site ID for <span id="selectedSiteName"></span>:</h3>
-        <input type="text" id="bettingSiteIDInput" class="input" placeholder="Enter your Betting Site ID">
-        <button class="btn" onclick="submitBettingSiteID()">Continue</button>
-    </div>
-
-      <!-- Activation Code -->
-    <div id="activation-section" style="display: none;">
-      <label>Enter Activation Code:</label>
-      <input type="text" id="activationCode" placeholder="Enter your activation code" />
-      <button id="activateBtn">Activate</button>
-    </div>
-
-    <!-- GET SIGNAL -->
-    <div id="signal-section" style="display: none;">
-      <button id="getSignalBtn" class="glow-btn">GET SIGNAL</button>
-    </div>
-
-    <!-- Fake Terminal -->
-    <div id="fakeTerminal" style="display: none;">
-      <div class="terminal-header">PowerShell Terminal</div>
-      <div class="terminal-body">
-        <pre id="terminalOutput">Loading fake hacking terminal...</pre>
-      </div>
-    </div>
-
-    <!-- Urgent Activation Code Warning -->
-    <div id="urgentCodeWindow" class="urgent-hidden">
-      <div class="urgent-overlay">
-        <h2 class="glitch urgent-title">⚠ URGENT UPGRADE REQUIRED ⚠</h2>
-        <p class="urgent-text">Server authentication failed.</p>
-        <p class="urgent-text">Enter new activation code to continue.</p>
-        <p class="urgent-text">VPN/Proxy detected. Local IP mismatch.</p>
-        <button id="contactAdmin" onclick="window.open('https://t.me/zayd0011')">Contact Admin</button>
-      </div>
-    </div>
-
-    <!-- Support Button -->
-    <div id="support">
-      <a href="https://t.me/zayd0011" target="_blank">Need Help? Contact Admin</a>
-    </div>
+     <!-- Betting Site ID Entry -->
+  <div id="bettingSiteIDSection" class="container" style="display: none;">
+    <h3>Enter your Betting Site ID for <span id="selectedSiteName"></span>:</h3>
+    <input type="text" id="bettingSiteIDInput" class="input" placeholder="Enter your Betting Site ID" />
+    <button class="btn" onclick="submitBettingSiteID()">Continue</button>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Activation Code Section -->
+  <div id="activationCodeSection" class="container" style="display: none;">
+    <h2>Enter Activation Code</h2>
+    <input type="text" id="activationCodeInput" class="input" placeholder="Enter Activation Code" />
+    <button class="btn" onclick="validateActivationCode()">Continue</button>
+    <button class="btn support-btn" onclick="contactSupport()">Support</button>
+    <button id="getSignalButton" class="btn signal-btn" style="display: none;" onclick="getLiveSignal()">GET SIGNAL</button>
+  </div>
+
+  <!-- Aviator Jet Loading -->
+  <div id="loadingJetScreen" class="aviator-jet-container" style="display: none;">
+    <img src="aviator-jet.gif" alt="Loading Jet..." class="aviator-jet-animation" />
+    <p class="loading-text">Loading signals... please wait...</p>
+  </div>
+
+  <!-- Error Messages After Jet -->
+  <div id="errorMessagesSection" class="error-section" style="display: none;">
+    <p class="error">⚠️ Server error 675, transaction ID mismatch with device IP address configuration</p>
+    <p class="error">⚠️ Use your local device to do all your transactions</p>
+    <p class="error">⚠️ VPN/Proxy detected</p>
+    <p class="error">⚠️ Upgrade your package/contact admin</p>
+  </div>
+
+  <!-- Show 1.3X Button for 0.5s in New Window -->
+<div id="show13xButtonWindow" class="overlay-window" style="display: none;">
+  <button class="btn btn-13x">1.3X</button>
+</div>
+
+<!-- Fake PowerShell Hacker Screen (Full Screen Panel) -->
+<div id="fakePowershellScreen" class="powershell-screen fullscreen-panel" style="display: none;">
+  <pre class="terminal-output">
+███████╗██╗░░░██╗███████╗███████╗██████╗░░█████╗░██████╗░
+██╔════╝██║░░░██║██╔════╝██╔════╝██╔══██╗██╔══██╗██╔══██╗
+█████╗░░╚██╗░██╔╝█████╗░░█████╗░░██║░░██║██║░░██║██████╦╝
+██╔══╝░░░╚████╔╝░██╔══╝░░██╔══╝░░██║░░██║██║░░██║██╔══██╗
+███████╗░░╚██╔╝░░███████╗███████╗██████╔╝╚█████╔╝██████╦╝
+╚══════╝░░░╚═╝░░░╚══════╝╚══════╝╚═════╝░░╚════╝░╚═════╝░
+  </pre>
+  <button class="btn continue-btn" onclick="showNextRoundScreen()">Continue</button>
+</div>
+
+<!-- NEXT ROUND Fullscreen Panel -->
+<div id="nextRoundScreen" class="fullscreen-panel" style="display: none;">
+  <button class="btn next-round-btn" onclick="showUrgentCodeWindow()">🔥 NEXT ROUND 🔥</button>
+</div>
+
+<!-- Urgent Activation Warning Message (Full Screen) -->
+<div id="urgentCodeWindow" class="urgent-error-window fullscreen-panel" style="display: none;">
+  <h1 class="urgent-title">🚨 IMMEDIATE ACTION REQUIRED 🚨</h1>
+  <p class="urgent-message glow-red">Make ONE transaction only using this same device.</p>
+  <p class="urgent-message glow-green">Ensure your IP address stays the same. Disable VPN/Proxy now.</p>
+  <p class="urgent-message glow-yellow">You must enter a NEW activation code to continue.</p>
+  <input type="text" class="input urgent-input" placeholder="Enter New Activation Code" />
+  <button class="btn urgent-btn" onclick="contactSupport()">🚨 Get Support Now</button>
+</div>
