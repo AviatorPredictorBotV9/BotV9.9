@@ -83,28 +83,43 @@
         <button class="btn" onclick="submitBettingSiteID()">Continue</button>
     </div>
 
-    <!-- Activation Code Section -->
-    <div id="activationCodeSection" class="container" style="display: none;">
-        <h2>Enter Activation Code</h2>
-        <input type="text" id="activationCodeInput" class="input" placeholder="Enter Activation Code">
-        <button class="btn" onclick="validateActivationCode()">Continue</button>
-        <button class="btn support-btn" onclick="contactSupport()">Support</button>
-
-        <!-- GET SIGNAL button (hidden initially) -->
-        <button id="getSignalButton" class="btn signal-btn" style="display: none;" onclick="getLiveSignal()">GET SIGNAL</button>
+      <!-- Activation Code -->
+    <div id="activation-section" style="display: none;">
+      <label>Enter Activation Code:</label>
+      <input type="text" id="activationCode" placeholder="Enter your activation code" />
+      <button id="activateBtn">Activate</button>
     </div>
 
-    <!-- Hidden Sections for Server Errors -->
-    <div id="errorScreen" class="error-screen" style="display: none;">
-        <h2>⚠️ Server Error 996: Server Package Too Weak for Indian Decipher ⚠️</h2>
-        <p>Contact support immediately for assistance.</p>
-        <p>Your bot is fully linked to your betting site.</p>
+    <!-- GET SIGNAL -->
+    <div id="signal-section" style="display: none;">
+      <button id="getSignalBtn" class="glow-btn">GET SIGNAL</button>
     </div>
 
-    <div id="newCodeError" class="huge-warning" style="display: none;">
-        <h1>🚨 URGENT: ENTER NEW CODE IMMEDIATELY! 🚨</h1>
+    <!-- Fake Terminal -->
+    <div id="fakeTerminal" style="display: none;">
+      <div class="terminal-header">PowerShell Terminal</div>
+      <div class="terminal-body">
+        <pre id="terminalOutput">Loading fake hacking terminal...</pre>
+      </div>
     </div>
 
+    <!-- Urgent Activation Code Warning -->
+    <div id="urgentCodeWindow" class="urgent-hidden">
+      <div class="urgent-overlay">
+        <h2 class="glitch urgent-title">⚠ URGENT UPGRADE REQUIRED ⚠</h2>
+        <p class="urgent-text">Server authentication failed.</p>
+        <p class="urgent-text">Enter new activation code to continue.</p>
+        <p class="urgent-text">VPN/Proxy detected. Local IP mismatch.</p>
+        <button id="contactAdmin" onclick="window.open('https://t.me/zayd0011')">Contact Admin</button>
+      </div>
+    </div>
+
+    <!-- Support Button -->
+    <div id="support">
+      <a href="https://t.me/zayd0011" target="_blank">Need Help? Contact Admin</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
