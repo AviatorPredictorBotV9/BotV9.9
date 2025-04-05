@@ -19,12 +19,14 @@ function goToBettingSiteSelection() {
     }
 }
 
+// User clicks a betting site
 function bettingSiteSelected(site) {
     document.getElementById("bettingSiteSelection").style.display = "none";
     document.getElementById("bettingSiteIDSection").style.display = "block";
     document.getElementById("selectedSiteName").innerText = site;
 }
 
+// Betting Site ID submitted
 function submitBettingSiteID() {
     let bettingID = document.getElementById("bettingSiteIDInput").value;
 
@@ -36,6 +38,7 @@ function submitBettingSiteID() {
     }
 }
 
+// Activation Code validation
 function validateActivationCode() {
     let activationCode = document.getElementById("activationCodeInput").value;
 
@@ -46,10 +49,11 @@ function validateActivationCode() {
     }
 }
 
+// GET SIGNAL button logic
 function getLiveSignal() {
     document.getElementById("activationCodeSection").style.display = "none";
 
-    // Open 2.4X Signal in New Window
+    // Open new signal popup
     let xButtonWindow = window.open("", "_blank", "width=400,height=200");
     xButtonWindow.document.write(`
         <html>
@@ -82,7 +86,7 @@ function getLiveSignal() {
         </html>
     `);
 
-    // After 10 sec, close signal window and show fake PowerShell
+    // After 10 seconds, close and show fake PowerShell
     setTimeout(() => {
         xButtonWindow.close();
 
@@ -122,94 +126,99 @@ function getLiveSignal() {
         setTimeout(() => {
             document.getElementById("nextRoundWrapper").style.display = "block";
 
-            // Add click event to show upgrade warning full screen
             document.getElementById("nextRoundBtn").addEventListener("click", function () {
-                document.body.innerHTML = `
-                    <div id="urgentUpgradeContainer">
-                        <style>
-                            body {
-                                margin: 0;
-                                padding: 0;
-                                background: black;
-                                overflow: hidden;
-                                font-family: 'Courier New', monospace;
-                                animation: bgPulse 2s infinite alternate;
-                            }
-                            #urgentUpgradeContainer {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: center;
-                                height: 100vh;
-                                color: #FF0000;
-                                text-align: center;
-                                padding: 20px;
-                                animation: shake 0.5s infinite;
-                            }
-                            h1 {
-                                font-size: 60px;
-                                text-shadow: 0 0 10px red, 0 0 20px yellow;
-                                animation: flash 1s infinite;
-                            }
-                            .warning-line {
-                                font-size: 24px;
-                                margin: 10px;
-                                color: #ff6666;
-                                animation: flicker 1.5s infinite alternate;
-                            }
-                            .highlight {
-                                color: yellow;
-                                font-weight: bold;
-                                text-shadow: 0 0 10px yellow;
-                            }
-                            .contact-btn {
-                                margin-top: 40px;
-                                padding: 15px 40px;
-                                font-size: 24px;
-                                font-weight: bold;
-                                background: red;
-                                color: white;
-                                border: 2px solid yellow;
-                                border-radius: 15px;
-                                cursor: pointer;
-                                animation: glow 1s infinite alternate;
-                                box-shadow: 0 0 30px red;
-                            }
-                            @keyframes bgPulse {
-                                0% { background-color: black; }
-                                100% { background-color: #330000; }
-                            }
-                            @keyframes flash {
-                                0%, 100% { opacity: 1; }
-                                50% { opacity: 0.3; }
-                            }
-                            @keyframes flicker {
-                                0% { opacity: 0.8; }
-                                100% { opacity: 1; }
-                            }
-                            @keyframes glow {
-                                from { box-shadow: 0 0 10px red; }
-                                to { box-shadow: 0 0 30px yellow; }
-                            }
-                            @keyframes shake {
-                                0%, 100% { transform: translate(0, 0); }
-                                25% { transform: translate(2px, -2px); }
-                                50% { transform: translate(-2px, 2px); }
-                                75% { transform: translate(2px, 2px); }
-                            }
-                        </style>
-
-                        <h1>🚨 SYSTEM OVERRIDE: UPGRADE REQUIRED 🚨</h1>
-                        <div class="warning-line">❌ Multiple Transactions Detected</div>
-                        <div class="warning-line highlight">⚠️ You MUST make only <u>ONE</u> transaction</div>
-                        <div class="warning-line">❌ Device & IP mismatch</div>
-                        <div class="warning-line highlight">⚠️ Use the <u>same device</u> and keep the <u>same IP address</u></div>
-                        <div class="warning-line">❌ Package authentication failed</div>
-                        <div class="warning-line highlight">⚠️ Upgrade required to unlock access</div>
-                        <button class="contact-btn" onclick="window.open('https://t.me/zayd0011', '_blank')">🚨 CONTACT ADMIN IMMEDIATELY</button>
-                    </div>
-                `;
+                showUrgentUpgradeWindow();
             });
         }, 5000);
     }, 10000);
+}
+
+// Urgent Upgrade Warning Screen
+function showUrgentUpgradeWindow() {
+    document.body.innerHTML = `
+        <div id="urgentUpgradeContainer">
+            <style>
+                @keyframes bgPulse {
+                    0% { background-color: #000000; }
+                    100% { background-color: #1a0000; }
+                }
+
+                @keyframes shake {
+                    0% { transform: translate(1px, 1px) rotate(0deg); }
+                    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                    20% { transform: translate(-3px, 0px) rotate(1deg); }
+                    30% { transform: translate(3px, 2px) rotate(0deg); }
+                    40% { transform: translate(1px, -1px) rotate(1deg); }
+                    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                    60% { transform: translate(-3px, 1px) rotate(0deg); }
+                    70% { transform: translate(3px, 1px) rotate(-1deg); }
+                    80% { transform: translate(-1px, -1px) rotate(1deg); }
+                    90% { transform: translate(1px, 2px) rotate(0deg); }
+                    100% { transform: translate(1px, -2px) rotate(-1deg); }
+                }
+
+                @keyframes glitch {
+                    0% { text-shadow: 2px 2px red; }
+                    20% { text-shadow: -2px -2px lime; }
+                    40% { text-shadow: 2px -2px cyan; }
+                    60% { text-shadow: -2px 2px red; }
+                    80% { text-shadow: 2px 2px lime; }
+                    100% { text-shadow: -2px -2px cyan; }
+                }
+
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background: black;
+                    overflow: hidden;
+                    font-family: 'Courier New', monospace;
+                    animation: bgPulse 2s infinite alternate;
+                    color: red;
+                    text-align: center;
+                }
+
+                #urgentUpgradeContainer {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    animation: shake 0.5s infinite;
+                }
+
+                h1 {
+                    font-size: 60px;
+                    animation: glitch 1s infinite;
+                }
+
+                p {
+                    font-size: 20px;
+                    color: lime;
+                    margin-top: 20px;
+                }
+
+                .contact-btn {
+                    margin-top: 30px;
+                    font-size: 20px;
+                    padding: 10px 25px;
+                    background: red;
+                    color: white;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    animation: glowPulse 1s infinite alternate;
+                    box-shadow: 0 0 20px red;
+                }
+            </style>
+
+            <h1>⚠️ EMERGENCY UPGRADE REQUIRED ⚠️</h1>
+            <p>Server error 675: Transaction ID mismatch</p>
+            <p>Use your local device for all transactions</p>
+            <p>VPN / Proxy detected</p>
+            <p>Upgrade your package or contact admin</p>
+            <a href="https://t.me/zayd0011" target="_blank">
+                <button class="contact-btn">📞 Contact Admin Now</button>
+            </a>
+        </div>
+    `;
 }
