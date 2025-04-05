@@ -80,8 +80,8 @@ function getLiveSignal() {
             </style>
         </head>
         <body>
-            <h2>🚀 2.4X Signal Ready!</h2>
-            <button class="x-btn">2.4X</button>
+            <h2>🚀 3.6X Signal Ready!</h2>
+            <button class="x-btn">3.6X</button>
         </body>
         </html>
     `);
