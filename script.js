@@ -31,7 +31,7 @@ function goToBettingSiteID() {
 }
 
 // Navigate to activation code section
-function goToActivationCode() {
+function goToActivationCode(GLE980) {
   hideAllSections();
   document.getElementById("activationCodeSection").style.display = "block";
 }
