@@ -1,239 +1,96 @@
-/* Reset and Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Courier New', monospace;
-}
-
+/* Global styles */
 body {
-  background-color: #000;
-  color: #00ffcc;
-  overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #FFB6C1, #F4A300);
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
-#container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.9);
-  border: 2px solid #00ffcc;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #00ffcc;
-  text-align: center;
-  animation: flickerBox 2s infinite alternate;
+/* General container */
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 600px;
 }
 
-@keyframes flickerBox {
-  0% { box-shadow: 0 0 10px #00ffcc; }
-  100% { box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffff; }
+/* Start Button */
+.start-btn {
+    padding: 20px 50px;
+    font-size: 2rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+.start-btn:hover {
+    background-color: #218838;
 }
 
-/* Glitch effect */
-.glitch {
-  position: relative;
-  animation: glitch 1s infinite;
-}
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-/* Inputs and Buttons */
-select, input, button {
-  margin: 10px;
-  padding: 10px;
-  font-size: 1rem;
-  background-color: #000;
-  color: #00ffcc;
-  border: 1px solid #00ffcc;
-  border-radius: 5px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-select:focus, input:focus {
-  border-color: #00ffff;
-  box-shadow: 0 0 5px #00ffff;
-}
-
+/* Common button styles */
 button {
-  cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
 }
 
 button:hover {
-  background-color: #00ffcc;
-  color: #000;
-  box-shadow: 0 0 10px #00ffff;
+    background-color: #218838;
 }
 
-/* Betting Sites Grid */
+/* Betting Sites styles */
 .betting-sites {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px auto;
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.betting-btn {
-  min-width: 120px;
-  background-color: #111;
-  border: 1px solid #00ffcc;
-  color: #00ffcc;
-  padding: 10px 15px;
-  border-radius: 4px;
-  transition: 0.2s;
+.site {
+    background-color: white;
+    color: #000;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.betting-btn:hover {
-  background-color: #00ffcc;
-  color: #000;
-  transform: scale(1.05);
+.site:hover {
+    background-color: #FF5733; /* Red for hover effect */
+    color: white;
 }
 
-/* Glow Button */
-.glow-btn {
-  background: #00ffcc;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #00ffcc;
-  animation: glowPulse 2s infinite ease-in-out;
+.site.selected {
+    background-color: #28a745; /* Green for selected */
+    color: white;
 }
 
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 10px #00ffcc; }
-  50% { box-shadow: 0 0 20px #00ffff; }
-  100% { box-shadow: 0 0 10px #00ffcc; }
+/* Error styles */
+#error-message {
+    color: red;
+    font-size: 1.5rem;
+    margin-top: 20px;
 }
 
-/* Fake Terminal */
-#fakeTerminal {
-  background-color: #111;
-  border: 2px solid #00ffcc;
-  color: #00ffcc;
-  font-size: 0.9rem;
-  margin-top: 20px;
-  padding: 15px;
-  box-shadow: 0 0 10px #00ffcc;
+.support-btn {
+    background-color: #ff1f1f;
+    font-size: 1.2rem;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.terminal-header {
-  background: #00ffcc;
-  color: #000;
-  padding: 5px;
-  font-weight: bold;
-  text-align: left;
-}
-
-.terminal-body {
-  background: #000;
-  padding: 10px;
-  text-align: left;
-  height: 200px;
-  overflow-y: auto;
-}
-
-/* Urgent Activation Warning */
-#urgentCodeWindow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  flex-direction: column;
-  animation: fadeInUrgent 1s ease-in-out forwards;
-}
-
-.urgent-hidden {
-  display: none;
-}
-
-.urgent-overlay {
-  background: #111;
-  padding: 30px;
-  border: 3px solid red;
-  box-shadow: 0 0 25px red;
-  text-align: center;
-  animation: glitchUrgent 0.8s infinite alternate;
-}
-
-.urgent-title {
-  color: red;
-  font-size: 2rem;
-  margin-bottom: 15px;
-  text-shadow: 0 0 10px red;
-}
-
-.urgent-text {
-  color: #ff5555;
-  margin: 5px 0;
-  font-weight: bold;
-  text-shadow: 0 0 5px red;
-}
-
-#contactAdmin {
-  background: red;
-  color: #000;
-  padding: 10px 20px;
-  margin-top: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 15px red;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-#contactAdmin:hover {
-  background: #ff5555;
-  box-shadow: 0 0 25px red;
-}
-
-/* Urgent Animations */
-@keyframes fadeInUrgent {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes glitchUrgent {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.02); }
-}
-
-/* Support Link */
-#support {
-  margin-top: 30px;
-}
-
-#support a {
-  color: #00ffcc;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow: 0 0 5px #00ffcc;
-}
-
-#support a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
+.support-btn:hover {
+    background-color: #d72f2f;
 }
