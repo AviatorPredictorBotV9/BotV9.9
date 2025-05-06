@@ -37,7 +37,7 @@ function goToActivationCode() {
 }
 
 // Validate activation code
-function validateActivationCode() {
+function validateActivationCode(GLE980) {
   const code = document.getElementById("activationCode").value.trim();
   const errorMessage = document.getElementById("error-message");
 
