@@ -1,5 +1,5 @@
 // Activation codes
-const validCodes = ["GZZ321", "ZAYD001", "AERO888"];
+const validCodes = ["GLE980", "ZAYD001", "AERO888"];
 
 // Event: Start button
 document.getElementById("startButton").onclick = () => {
